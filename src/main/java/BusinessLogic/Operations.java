@@ -95,6 +95,8 @@ public class Operations {
                 else res=res+"+"+df.format(aux)+"x^"+(ent+1);
             }
         }
+        if(res.isEmpty())
+            res="0";
         if(res.charAt(0)=='+')
           res=res.substring(1);
         return res;
@@ -182,6 +184,10 @@ public class Operations {
             String pwrStr=m.group(2);
             String ctStr=m.group(3);
             if(coefStr!=null){
+                if(coefStr.equals("-"))
+                    coefStr="-1";
+                if(coefStr.equals("+"))
+                    coefStr="1";
             int coef=coefStr.isEmpty()?1:Integer.parseInt(coefStr.trim());
             int power=(pwrStr==null || pwrStr.isEmpty())?1:Integer.parseInt(pwrStr);
             pol.addMonome(power, coef);

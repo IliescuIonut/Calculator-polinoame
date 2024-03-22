@@ -20,7 +20,7 @@ public class Polynomial {
             else
             polinom.replace(power, index+polinom.get(power));
         }
-        else
+        else if(index!=0)
         polinom.put(power, index);
     }
 
