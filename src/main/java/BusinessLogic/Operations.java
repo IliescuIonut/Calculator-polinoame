@@ -132,7 +132,7 @@ public class Operations {
 
     public String division(Polynomial p1, Polynomial p2) throws DivideBy0
     {
-        if(p2.polinom.get(p2.polinom.firstKey())==0)
+        if(p2.polinom.isEmpty())
             throw new DivideBy0("Don't divide by 0");
         else {
             String res = "";
